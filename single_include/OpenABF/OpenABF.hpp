@@ -237,7 +237,7 @@ public:
         std::size_t i{0};
 #if __cplusplus >= 201703L
         // C++17 folding
-        ((val_[i++] = args), ...);
+        ((void)(val_[i++] = args), ...);
 #elif __cplusplus > 201103L
         detail::ExpandType{0, ((val_[i++] = args), 0)...};
 #else
